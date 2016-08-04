@@ -7,6 +7,17 @@ var ReactDOM = require('react-dom');
 
 //NavBar Componet
 var NavBar = React.createClass({
+
+    propTypes:{
+        brand:React.PropTypes.string.isRequired
+    },
+
+    getDefaultProps:function(){
+        return {
+            brand: 'Boot'
+        }
+    },
+
     render: function () {
         return (
             <nav className="navbar navbar-default">
@@ -18,7 +29,7 @@ var NavBar = React.createClass({
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        <a className="navbar-brand" href="#">My Bootstrap Componet</a>
+                        <a className="navbar-brand" href="#">{ this.props.brand }</a>
                     </div>
 
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -35,13 +46,30 @@ var NavBar = React.createClass({
 
 //Jumbotorn Componet
 var Jumbotron = React.createClass({
+
+    propTypes:{
+
+        heading:React.PropTypes.string.isRequired,
+        content:React.PropTypes.string.isRequired,
+        link:React.PropTypes.string.isRequired
+
+    },
+
+    getDefaultProps:function(){
+        return {
+            heading:'Haha,Welcome',
+            content:'This is the content',
+            link:'http://baidu.com'
+        }
+    },
+
     render:function(){
         return (
         <div className="jumbotron">
             <div className="container">
-                <h1>Hello, world!</h1>
-                <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-                <p><a className="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+                <h1>{this.props.heading}</h1>
+                <p>{this.props.content}</p>
+                <p><a className="btn btn-primary btn-lg" href={this.props.link} role="button">Learn more &raquo;</a></p>
             </div>
         </div>
         );
@@ -81,7 +109,7 @@ var App = React.createClass({
     render:function(){
         return (
             <div>
-                <NavBar />
+                <NavBar/>
                 <Jumbotron />
                 <HomePage />
                 <Foot />
