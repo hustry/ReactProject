@@ -14,13 +14,32 @@ var NavBar = React.createClass({
 
     getDefaultProps:function(){
         return {
-            brand: 'Boot'
+            brand: 'Boot',
+            color: 'dark'
         }
     },
 
     render: function () {
+        var Navclass = null;
+        if(this.props.color == 'dark'){
+            Navclass = 'navbar navbar-inverse';
+        }
+        else{
+            Navclass = 'navbar navbar-default';
+        }
+
+        var homeActive ='';
+        var aboutActive ='';
+
+        if(this.props.page == 'home'){
+            homeActive = 'active';
+        }
+        else{
+            aboutActive = 'active';
+        }
+
         return (
-            <nav className="navbar navbar-default">
+            <nav className={ Navclass }>
                 <div className="container">
                     <div className="navbar-header">
                         <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -34,8 +53,8 @@ var NavBar = React.createClass({
 
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul className="nav navbar-nav">
-                            <li className="active"><a href="#">Home <span className="sr-only">(current)</span></a></li>
-                            <li><a href="#">About</a></li>
+                            <li className={homeActive}><a onClick={this.props.homeClick} >Home </a></li>
+                            <li className={aboutActive}><a onClick={this.props.aboutClick}>About</a></li>
                         </ul>
                     </div>
                 </div>
@@ -106,11 +125,43 @@ var Foot =React.createClass({
 
 
 var App = React.createClass({
+
+    getInitialState:function(){
+        return {
+            page:'home'
+        };
+    },
+
+    handleHomeClick:function(){
+        this.setState({
+            page:'home'
+        });
+    },
+
+    handleAboutClick:function(){
+        this.setState({
+            page:'about'
+        });
+    },
+
     render:function(){
+
+        var jumbotoron;
+
+        if(this.state.page == 'home'){
+            jumbotoron = <Jumbotron />;
+        }
+        else{
+            jumbotoron = '';
+        }
+
         return (
             <div>
-                <NavBar/>
-                <Jumbotron />
+                <NavBar
+                    homeClick={this.handleHomeClick}
+                    aboutClick={this.handleAboutClick}
+                    page={this.state.page}/>
+                {jumbotoron}
                 <HomePage />
                 <Foot />
             </div>
