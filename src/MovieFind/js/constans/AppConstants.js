@@ -1,0 +1,8 @@
+
+
+module.exports = {
+
+    SEACH_MOVIES: 'SEACH_MOVIES',
+    RECEIVE_MOVIES:'RECEIVE_MOVIES'
+
+};

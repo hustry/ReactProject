@@ -1,0 +1,21 @@
+
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
+
+class ScoreBox extends Component{
+
+    constructor(props){
+        super(props);
+    }
+
+    render(){
+
+        return(
+            <div className = "well">
+                Question {this.props.current} out of {this.props.questions.length} <span className="pull-right"><strong>Score:{this.props.score}</strong></span>
+            </div>
+        )
+    }
+}
+
+export default ScoreBox

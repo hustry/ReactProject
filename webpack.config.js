@@ -1,17 +1,23 @@
-var webpack = require('webpack');
 
+
+// Use any JavaScript you want. It¡¯s just a node.js module
+
+var path = require('path');
 
 module.exports = {
-
-    entry: './src/app.js',
+    entry: {
+        BootStrap:__dirname + '/src/BootStrap_Componet/app.js',
+        Github:__dirname + '/src/Github_Profile/app.js',
+        Quiz:__dirname+'/src/Quiz/index.js'
+    },
     output: {
         path: './build',
-        filename: 'bundle.js'
+        filename: '[name]_bundle.js'
     },
     module: {
         loaders: [
             {
-                test: /\.js?$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 loader: 'babel',
                 query: {
@@ -31,13 +37,6 @@ module.exports = {
                 loader: 'url-loader',
                 query: {mimetype: "image/png"}
             }
-            /*  or
-             * {
-             *   test:/\.png$/,
-             *   loader:'url-loader?mimetype=image/png'
-             * }
-             * */
-
         ]
     }
 };

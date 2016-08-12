@@ -46,210 +46,27 @@
 
 	'use strict';
 
-	__webpack_require__(1);
+	var _react = __webpack_require__(5);
 
-	var React = __webpack_require__(5);
-	var ReactDOM = __webpack_require__(39);
+	var _react2 = _interopRequireDefault(_react);
 
-	//NavBar Componet
-	var NavBar = React.createClass({
-	    displayName: 'NavBar',
+	var _reactDom = __webpack_require__(39);
 
-	    render: function render() {
-	        return React.createElement(
-	            'nav',
-	            { className: 'navbar navbar-default' },
-	            React.createElement(
-	                'div',
-	                { className: 'container' },
-	                React.createElement(
-	                    'div',
-	                    { className: 'navbar-header' },
-	                    React.createElement(
-	                        'button',
-	                        { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1', 'aria-expanded': 'false' },
-	                        React.createElement(
-	                            'span',
-	                            { className: 'sr-only' },
-	                            'Toggle navigation'
-	                        ),
-	                        React.createElement('span', { className: 'icon-bar' }),
-	                        React.createElement('span', { className: 'icon-bar' }),
-	                        React.createElement('span', { className: 'icon-bar' })
-	                    ),
-	                    React.createElement(
-	                        'a',
-	                        { className: 'navbar-brand', href: '#' },
-	                        'My Bootstrap Componet'
-	                    )
-	                ),
-	                React.createElement(
-	                    'div',
-	                    { className: 'collapse navbar-collapse', id: 'bs-example-navbar-collapse-1' },
-	                    React.createElement(
-	                        'ul',
-	                        { className: 'nav navbar-nav' },
-	                        React.createElement(
-	                            'li',
-	                            { className: 'active' },
-	                            React.createElement(
-	                                'a',
-	                                { href: '#' },
-	                                'Home ',
-	                                React.createElement(
-	                                    'span',
-	                                    { className: 'sr-only' },
-	                                    '(current)'
-	                                )
-	                            )
-	                        ),
-	                        React.createElement(
-	                            'li',
-	                            null,
-	                            React.createElement(
-	                                'a',
-	                                { href: '#' },
-	                                'About'
-	                            )
-	                        )
-	                    )
-	                )
-	            )
-	        );
-	    }
-	});
+	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	//Jumbotorn Componet
-	var Jumbotron = React.createClass({
-	    displayName: 'Jumbotron',
+	var _App = __webpack_require__(179);
 
-	    render: function render() {
-	        return React.createElement(
-	            'div',
-	            { className: 'jumbotron' },
-	            React.createElement(
-	                'div',
-	                { className: 'container' },
-	                React.createElement(
-	                    'h1',
-	                    null,
-	                    'Hello, world!'
-	                ),
-	                React.createElement(
-	                    'p',
-	                    null,
-	                    'This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.'
-	                ),
-	                React.createElement(
-	                    'p',
-	                    null,
-	                    React.createElement(
-	                        'a',
-	                        { className: 'btn btn-primary btn-lg', href: '#', role: 'button' },
-	                        'Learn more »'
-	                    )
-	                )
-	            )
-	        );
-	    }
-	});
+	var _App2 = _interopRequireDefault(_App);
 
-	//HomePage Componet
-	var HomePage = React.createClass({
-	    displayName: 'HomePage',
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	    render: function render() {
-	        return React.createElement(
-	            'div',
-	            { className: 'container' },
-	            React.createElement(
-	                'div',
-	                { className: 'row' },
-	                'Main Content'
-	            )
-	        );
-	    }
-	});
+	__webpack_require__(181);
 
-	var Foot = React.createClass({
-	    displayName: 'Foot',
-
-	    render: function render() {
-	        return React.createElement(
-	            'div',
-	            { className: 'container' },
-	            React.createElement('hr', null),
-	            React.createElement(
-	                'footer',
-	                null,
-	                React.createElement(
-	                    'p',
-	                    null,
-	                    '© 2016 Company, Inc.'
-	                )
-	            )
-	        );
-	    }
-	});
-
-	var App = React.createClass({
-	    displayName: 'App',
-
-	    render: function render() {
-	        return React.createElement(
-	            'div',
-	            null,
-	            React.createElement(NavBar, null),
-	            React.createElement(Jumbotron, null),
-	            React.createElement(HomePage, null),
-	            React.createElement(Foot, null)
-	        );
-	    }
-	});
-
-	ReactDOM.render(React.createElement(App, null), document.getElementById('content'));
+	_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('content'));
 
 /***/ },
-/* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(2);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(4)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./style.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./style.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(3)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "\r\n.navbar{\r\n    margin-bottom: 0;\r\n}", ""]);
-
-	// exports
-
-
-/***/ },
+/* 1 */,
+/* 2 */,
 /* 3 */
 /***/ function(module, exports) {
 
@@ -21934,6 +21751,217 @@
 	var ReactMount = __webpack_require__(171);
 
 	module.exports = ReactMount.renderSubtreeIntoContainer;
+
+/***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(39);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	var _Profile = __webpack_require__(180);
+
+	var _Profile2 = _interopRequireDefault(_Profile);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var App = function (_Component) {
+	    _inherits(App, _Component);
+
+	    function App(props) {
+	        _classCallCheck(this, App);
+
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this, props));
+
+	        _this.state = {
+	            username: 'hustry',
+	            userData: [],
+	            userRepos: [],
+	            perPage: 5
+	        };
+	        return _this;
+	    }
+
+	    //Get user data from github
+
+
+	    _createClass(App, [{
+	        key: 'getUserData',
+	        value: function getUserData() {
+	            $.ajax({
+	                url: 'https://api.github.com/users/' + this.state.username,
+	                dataType: 'json',
+	                cache: false,
+	                success: function (data) {
+	                    this.setState({ userData: data });
+	                    console.log(data);
+	                }.bind(this)
+	            });
+	        }
+	    }, {
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            this.getUserData();
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(_Profile2.default, { userData: this.state.userData })
+	            );
+	        }
+	    }]);
+
+	    return App;
+	}(_react.Component);
+
+	App.propTypes = {
+	    clientId: _react2.default.PropTypes.string,
+	    clientSecret: _react2.default.PropTypes.string
+	};
+
+	App.defaultProps = {
+	    clientId: 'sa222d',
+	    clientSecret: 'fresfcrc'
+	};
+
+	exports.default = App;
+
+/***/ },
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(39);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Profile = function (_Component) {
+	    _inherits(Profile, _Component);
+
+	    function Profile() {
+	        _classCallCheck(this, Profile);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Profile).apply(this, arguments));
+	    }
+
+	    _createClass(Profile, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'panel panel-default' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'panel-heading' },
+	                    _react2.default.createElement(
+	                        'h3',
+	                        { className: 'panel-title' },
+	                        this.props.userData.name
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'panel-body' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'row' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'col-md-4' },
+	                            _react2.default.createElement('img', { src: this.props.userData.avatar_url, className: 'thumbnail', style: { width: '100%' } })
+	                        ),
+	                        _react2.default.createElement('div', { className: 'col-md-8' })
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Profile;
+	}(_react.Component);
+
+	exports.default = Profile;
+
+/***/ },
+/* 181 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(182);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(4)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./style.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./style.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 182 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(3)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\r\n.navbar{\r\n    margin-bottom: 0;\r\n}", ""]);
+
+	// exports
+
 
 /***/ }
 /******/ ]);

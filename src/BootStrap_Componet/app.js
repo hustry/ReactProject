@@ -76,7 +76,7 @@ var Jumbotron = React.createClass({
 
     getDefaultProps:function(){
         return {
-            heading:'Haha,Welcome',
+            heading:'Ha111112ha2,Welcome',
             content:'This is the content',
             link:'http://baidu.com'
         }
